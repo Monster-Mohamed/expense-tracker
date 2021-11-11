@@ -1,0 +1,14 @@
+.card {
+  padding: 1rem;
+  background-color: $secondColor;
+  margin: 2rem auto;
+  width: 50rem;
+  max-width: 95%;
+  border-radius: 12px;
+  transition: $trans;
+}
+
+.card:hover {
+  cursor: pointer;
+  box-shadow: $mainBox;
+}

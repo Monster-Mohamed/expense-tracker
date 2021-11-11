@@ -1,0 +1,17 @@
+/*
+ * d_flex($dir[Op], $jc[Op], $wrap[Op])
+ * $dir => flex-direction by default row
+ * $jc => justify-content by default space-between
+ * $wrap => flex-wrap and its boolean eceppt true || false by default true
+ * $ai => align-items by default is center
+*/
+@mixin d_flex($dir: row, $jc: space-between, $wrap: ture, $ai: center) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $jc;
+  position: relative;
+  @if $wrap {
+    flex-wrap: wrap;
+  }
+  align-items: $ai;
+}

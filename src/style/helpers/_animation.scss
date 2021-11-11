@@ -1,0 +1,12 @@
+@keyframes resizing {
+  0% {
+    padding: 0.5rem;
+  }
+  50% {
+    padding: 0.7rem;
+    box-shadow: $mainBox;
+  }
+  100% {
+    padding: 0.5rem;
+  }
+}
