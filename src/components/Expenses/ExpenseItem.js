@@ -1,22 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import ExpenseDate from "./ExpenseDate";
 
-const ExpenseItem = ({ title, amount, date }) => {
-	const [myTitle, setMyTitle] = useState(title);
-	const changeTitle = () => {
-		setMyTitle(`Hello World`);
-	};
-	return (
-		<div className="expense-item">
-			<ExpenseDate date={date} />
-			<div className="expense-item__description">
-				<h2>{myTitle}</h2>
-				<div onClick={changeTitle} className="expense-item__price">
-					${amount}
+const ExpenseItem = ({ data }) => {
+	const getAllExpense = () => {
+		return data.map((el, idx) => {
+			return (
+				<div className="expense-item" key={idx}>
+					<div className="expense-item__description">
+						<ExpenseDate date={el.date} />
+						<h2>{el.title}</h2>
+						<div className="expense-item__price">${el.amount}</div>
+					</div>
 				</div>
-			</div>
-		</div>
-	);
+			);
+		});
+	};
+
+	return getAllExpense();
 };
 
 export default ExpenseItem;

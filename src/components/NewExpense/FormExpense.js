@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-const FormExpense = () => {
+const FormExpense = ({ onSaveExpense }) => {
 	const [formData, setFormData] = useState({
 		title: "",
-		amount: "",
+		amount: 0,
 		date: "",
 	});
 
@@ -19,19 +19,33 @@ const FormExpense = () => {
 	};
 	const changeDate = (eo) => {
 		setFormData((prevState) => {
-			return { ...prevState, date: eo.target.value };
+			return { ...prevState, date: new Date(eo.target.value) };
 		});
 	};
+
+	const submitHandler = (eo) => {
+		eo.preventDefault();
+		const expenseData = formData;
+		onSaveExpense(expenseData);
+		setFormData({ title: "", amount: 0, date: new Date() });
+	};
+
 	return (
-		<form>
+		<form onSubmit={submitHandler}>
 			<div className="new-expense__controls">
 				<div className="new-expense__control">
 					<label>Title</label>
-					<input type="text" onChange={changeTitle} />
+					<input type="text" value={formData.title} onChange={changeTitle} />
 				</div>
 				<div className="new-expense__control">
-					<label>Amount</label>
-					<input type="number" min="0" step="0" onChange={changeAmount} />
+					<label>Price</label>
+					<input
+						type="number"
+						min="0"
+						step="0"
+						value={formData.amount}
+						onChange={changeAmount}
+					/>
 				</div>
 				<div className="new-expense__control">
 					<label>Date</label>
