@@ -7,5 +7,5 @@ this app for track your expense and say to you when you bought this proudct and 
 4. to open this project on the browser write `npm start`
 5. finally have fun !!
 ## Why use this app?
-because this app is very important to be your life best and to mnake your own company by saving money
+because this app is very important to be your life best and to mnake your own company by saving money <br>
 [Help Me](https://github.blog/2013-01-31-relative-links-in-markup-files/)
