@@ -15,7 +15,7 @@ const App = () => {
 			id: 2,
 			title: "PS5",
 			amount: 500,
-			date: new Date(2021, 5, 10),
+			date: new Date(2022, 5, 10),
 		},
 		{
 			id: 3,
@@ -27,7 +27,7 @@ const App = () => {
 
 	const saveNewExpense = (expensedata) => {
 		const expdata = { ...expensedata, amount: parseInt(expensedata.amount) };
-		setExpense((prevState) => [...prevState, expdata]);
+		setExpense((prevState) => [expdata, ...prevState]);
 	};
 
 	return (

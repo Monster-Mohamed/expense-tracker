@@ -33,6 +33,10 @@
   animation: resizing 3s infinite;
 }
 
+.expense_heading2 {
+  color: $mainColor;
+}
+
 @media (min-width: 580px) {
   .expense-item__description {
     @include d_flex(row, flex-start);

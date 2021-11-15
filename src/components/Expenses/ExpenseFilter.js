@@ -2,8 +2,8 @@ import React from "react";
 
 const ExpensesFilter = ({ onSetYear, selected }) => {
 	const getYear = (eo) => {
-		const value = eo.target.value;
-		onSetYear(value);
+		const thisYear = parseInt(eo.target.value);
+		onSetYear(thisYear);
 	};
 
 	return (
@@ -11,6 +11,9 @@ const ExpensesFilter = ({ onSetYear, selected }) => {
 			<div className="expenses-filter__control">
 				<label>Filter by year</label>
 				<select value={selected} onChange={getYear}>
+					<option selected value="0">
+						Choose The Year
+					</option>
 					<option value="2022">2022</option>
 					<option value="2021">2021</option>
 					<option value="2020">2020</option>

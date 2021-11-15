@@ -1,21 +1,17 @@
 import React, { useState } from "react";
-import Card from "../UI/Card";
-import ExpensesFilter from "./ExpenseFilter";
-import ExpenseItem from "./ExpenseItem";
+
+import ExpenseList from "./ExpenseList";
 
 const Expenses = ({ data }) => {
 	const [year, setYear] = useState("");
 
 	const setSelectedYear = (selectedYear) => {
-		return setYear(selectedYear);
+		setYear(selectedYear);
 	};
 
 	return (
 		<div className="expensesParent">
-			<ExpensesFilter selected={year} onSetYear={setSelectedYear} />
-			<Card>
-				<ExpenseItem data={data} />
-			</Card>
+			<ExpenseList setSelectedYear={setSelectedYear} data={data} year={year} />
 		</div>
 	);
 };
